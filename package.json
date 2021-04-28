@@ -13,6 +13,14 @@
   ],
   "author": "KeZA3D",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeZA3D/ggizmo-finder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KeZA3D/ggizmo-finder.git/issues"
+  },
+  "homepage": "https://github.com/KeZA3D/ggizmo-finder.git#readme",
   "dependencies": {
     "fs": "0.0.1-security",
     "rage-edit": "^1.2.0"
