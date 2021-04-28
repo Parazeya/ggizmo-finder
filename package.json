@@ -1,0 +1,20 @@
+{
+  "name": "ggizmo-finder",
+  "version": "0.0.1",
+  "description": "Automatic search Gizmo Server on the computer",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "keywords": [
+    "gizmo-finder",
+    "gizmopowered",
+    "gizmo-search"
+  ],
+  "author": "KeZA3D",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "rage-edit": "^1.2.0"
+  }
+}
