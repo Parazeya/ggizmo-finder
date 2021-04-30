@@ -1,6 +1,6 @@
 {
   "name": "ggizmo-finder",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Automatic search Gizmo Server on the computer",
   "main": "index.js",
   "scripts": {

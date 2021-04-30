@@ -1,2 +1,24 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# .gitignore 
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+.vscode/
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+coverage
+tmp
+issues/
+test/fixtures/test*
+
+.idea
