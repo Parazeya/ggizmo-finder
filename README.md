@@ -11,7 +11,7 @@ npm install ggizmo-finder
 
 ## Quick Example
 ```js
-const Finder = require("./index.js")
+const Finder = require("ggizmo-finder")
 
 async () => {
     try {
