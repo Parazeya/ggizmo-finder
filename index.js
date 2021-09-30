@@ -6,13 +6,12 @@ const FS = require('fs')
 const Finder = {
     Detect: async () => {
         try {
-            const reg = await Registry.get('HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\NETProjects\\Gizmo Service', 'Path');
-            if (reg === undefined) {
-                throw new Error("Regedit: Can't Find `Gizmo Service`")
-            }
+            var reg = await Registry.get('HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\NETProjects\\Gizmo Service', 'Path');
+            if (reg === undefined) reg = await Registry.get('HKEY_LOCAL_MACHINE\\SOFTWARE\\NETProjects\\Gizmo Service', 'Path');
+            if (reg === undefined) throw new Error("Regedit: Can't Find `Gizmo Service`")
             return reg
         } catch (e) {
-            console.error(e)
+            console.error(e.message)
             return false
         }
     },
@@ -21,7 +20,7 @@ const Finder = {
             const ServiceJson = OpenFile(path + "\\Service.json", true)
             return ServiceJson
         } catch (e) {
-            console.error(e)
+            console.error(e.message)
             return false
         }
     },
@@ -32,7 +31,7 @@ const Finder = {
             const DBName = DBArray[1].split("=")[1];
             return { Value: ServiceJson.Service.Database.DbConnectionString, Split: DBArray, Server: DBServer, Name: DBName }
         } catch (e) {
-            console.error(e)
+            console.error(e.message)
             return false
         }
     }
@@ -51,7 +50,7 @@ function OpenFile(file, decode = false) {
             }
         }
     } catch (err) {
-        console.error(err)
+        console.error(err.message)
         return false
     }
     return read;
