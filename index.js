@@ -9,6 +9,12 @@ const Finder = {
             var reg = await Registry.get('HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\NETProjects\\Gizmo Service', 'Path');
             if (reg === undefined) reg = await Registry.get('HKEY_LOCAL_MACHINE\\SOFTWARE\\NETProjects\\Gizmo Service', 'Path');
             if (reg === undefined) reg = await Registry.get('HKEY_LOCAL_MACHINE\\SOFTWARE\\NETProjects\\Gizmo Server', 'Path');
+            if (reg === undefined) {
+                reg = await Registry.get('HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\GizmoService', 'ImagePath');
+                if (reg) {
+                    reg = reg.replace("GizmoService.exe")
+                }
+            }
             
             if (reg === undefined) throw new Error("Regedit: Can't Find `Gizmo Service`")
             return reg
