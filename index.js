@@ -12,7 +12,7 @@ const Finder = {
             if (reg === undefined) {
                 reg = await Registry.get('HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\GizmoService', 'ImagePath');
                 if (reg) {
-                    reg = reg.replace("GizmoService.exe")
+                    reg = reg.replace("\\GizmoService.exe","")
                 }
             }
             
